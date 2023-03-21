@@ -1,0 +1,79 @@
+#construction {
+    list-style-type: none;
+}
+
+#construction ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#construction ul {
+    position: relative;
+    margin-left: 15px;
+}
+
+#construction ul:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-left: 1px solid red;
+}
+
+#construction ul li {
+    position: relative;
+    margin: 0;
+    padding: 7px 15px;
+}
+
+#construction ul li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 15px;
+    height: 0;
+    border-top: 1px solid blue;
+}
+
+#construction ul li:last-child:before {
+    top: 15px;
+    bottom: 0;
+    height: auto;
+    background-color: #fff;
+}
+
+button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+    opacity: 0.4;
+    transition: 0.2s;
+    background: none;
+    border: solid 1px black;
+    border-radius: 20%;
+}
+button:hover {
+    opacity: 0.8;
+}
+button i {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+}
+
+.copy-btn {
+    transform: translateX(-100%);
+}
+.modify-btn {
+    transform: translateX(-200%);
+}
+.resize-btn {
+    transform: translateX(-300%);
+}
