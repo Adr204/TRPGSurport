@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
             shiftToggle(false);
         }
     });
+    document.getElementById("save").addEventListener("click", save);
+    document.getElementById("load").addEventListener("click", load);
 })
 
 function keepValue() {
@@ -217,4 +219,23 @@ function copy_to_clipboard(value) {
     } else {
         console.log('対応していません。');
     }
+}
+
+// Save/Loadボタン用
+function setSaveData(savedata) {
+    let c = document.getElementById("construction");
+    c.innerHTML = savedata.structure;
+    [...c.getElementsByTagName("textarea")].forEach((e, i) => { e.value = savedata.values[i]});
+}
+function getCurrentData() {
+    let c = document.getElementById("construction");
+    let structure = c.innerHTML;
+    let values = [...c.getElementsByTagName("textarea")].map(e => {return e.value;});
+    return {structure, values}
+}
+function load() {
+    setSaveData(JSON.parse(localStorage.getItem("savedata")));
+}
+function save() {
+    localStorage.setItem("savedata", JSON.stringify(getCurrentData()));
 }
