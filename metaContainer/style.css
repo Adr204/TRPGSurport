@@ -48,16 +48,18 @@
     background-color: #fff;
 }
 
-li button {
-    position: absolute;
-    width: 24px;
-    height: 24px;
+button {
     font-size: 18px;
     opacity: 0.4;
     transition: 0.2s;
     background: none;
     border: solid 1px black;
     border-radius: 20%;
+}
+li button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
 }
 button:hover {
     opacity: 0.8;
